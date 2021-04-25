@@ -4,6 +4,6 @@ server {
                 proxy_pass http://localhost:8080/;
         }
         location / {
-                root /home/weirdmeat/my_nginx/public;
+                root ~/my_nginx/public;
         }
 }
