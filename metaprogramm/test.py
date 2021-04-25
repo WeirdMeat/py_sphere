@@ -6,21 +6,25 @@ from custom_list import CustomList
 
 class TestList(unittest.TestCase):
 
-    def test_add1(self):
+    def test_add(self):
         Ob1 = CustomList([1, 2, 3])
         Ob2 = CustomList([2, 4, 5])
         Ob3 = Ob1 + Ob2
+        Ob4 = Ob1 + [2]
+        Ob5 = [1, 4] + Ob1
         self.assertEqual(Ob3, [3, 6, 8])
+        self.assertEqual(Ob4, [3, 2, 3])
+        self.assertEqual(Ob5, [2, 6, 3])
 
-    def test_add2(self):
+    def test_sub(self):
         Ob1 = CustomList([1, 2, 3])
-        Ob2 = Ob1 + [2]
-        self.assertEqual(Ob2, [3, 2, 3])
-
-    def test_add3(self):
-        Ob1 = CustomList([2, 4, 5])
-        Ob2 = [1, 4] + Ob1
-        self.assertEqual(Ob2, [3, 8 ,5])
+        Ob2 = CustomList([2, 4, 5])
+        Ob3 = Ob1 - Ob2
+        Ob4 = Ob1 - [2]
+        Ob5 = [1, 4] - Ob1
+        self.assertEqual(Ob3, [-1, -2, -2])
+        self.assertEqual(Ob4, [-1, 2, 3])
+        self.assertEqual(Ob5, [0, 2, -3])
 
     def test_compare(self):
         Ob1 = CustomList([1, 2, 3])
